@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+		
+		<!--Do not change the assembly name or else the wpf binding for static wont work-->
+		<!--<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="WPF\UControl.xaml.resx.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UControl.xaml.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="WPF\UControl.xaml.resx">
+      <Generator>RootResourceGenerator</Generator>
+      <LastGenOutput>UControl.xaml.resx.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
